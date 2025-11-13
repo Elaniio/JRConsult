@@ -1,7 +1,7 @@
 # 💻 JRConsult
 
 Repositório criado para armazenar e organizar **atividades e exercícios em JavaScript**.  
-Cada diretório (D1, D2, D3, etc.) representa uma atividade prática com código comentado para aprendizado e prática de lógica de programação.
+Cada diretório (D1, D2, D3, etc.) representa uma atividade prática com código para aprendizado e prática de lógica de programação.
 
 ---
 
