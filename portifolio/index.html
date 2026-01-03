@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio — Diego Silva</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+ <style>
+   
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo">SN</div>
+        <h1>Francisco Diego</h1>
+      </div>
+
+      <nav id="main-nav" aria-label="Navegação principal">
+        <a href="#apresentacao">Inicio</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+        <button aria-expanded="false" aria-controls="mobile-menu" id="hambtn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+    <a href="#apresentacao" data-close>Inicio</a>
+    <a href="#sobre" data-close>Sobre</a>
+    <a href="#projetos" data-close>Projetos</a>
+    <a href="#skills" data-close>Habilidades</a>
+    <a href="#contato" data-close>Contato</a>
+  </div>
+
+  <main class="container">
+    
+    <section id="apresentacao" class="hero reveal">
+      <div class="hero-card">
+        <div class="avatar">
+          <img src=https://thumbs.dreamstime.com/b/isolated-colored-avatar-man-beard-vector-illustration-240012890.jpg alt="Sua foto">
+        </div>
+        <div class="intro">
+          <h2>Olá, eu sou Diego</h2>
+          <p>Sou desenvolvedor front-end — crio interfaces bonitas e funcionais. Aqui você encontra meus projetos, habilidades e como me contatar.</p>
+          <div class="cta">
+            <a class="btn" href="#projetos">Ver Projetos</a>
+            <button class="btn secondary" id="download-cv">Baixar CV</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="sobre" class="reveal">
+      <h3>Sobre Mim</h3>
+      <div class="about-card" style="background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6)">
+        <p style="color:var(--muted)">Sou desenvolvedor web recém-ingressado na área de tecnologia, com foco em front-end. Trabalho na contrução de interfaces funcionais, organizadas e responsivas, sempre seguindo boas práticas de desenvolvimento</p>
+      </div>
+    </section>
+
+    
+    <section id="projetos" class="reveal">
+      <h3>Projetos</h3>
+      <div class="projects-grid" id="projects-grid">
+        
+      </div>
+    </section>
+
+    
+    <section id="skills" class="reveal">
+      <h3>Habilidades</h3>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS (Flex)</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Git</div>
+        
+      </div>
+    </section>
+
+    
+    <section id="contato" class="reveal">
+      <h3>Contato</h3>
+      <div class="contact-grid" style="background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6)">
+        <form id="contact-form">
+          <div class="field">
+            <label for="name">Nome</label>
+            <input id="name" name="name" type="text" placeholder="Seu nome" />
+            <div class="error" id="error-name" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="seu@email.com" />
+            <div class="error" id="error-email" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem"></textarea>
+            <div class="error" id="error-message" aria-live="polite"></div>
+          </div>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn" type="submit">Enviar</button>
+            <div id="form-feedback" style="flex:1"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Diego Silva </p>
+    </footer>
+  </main>
+
+  <button class="to-top" id="to-top" aria-label="Voltar ao topo">↑</button>
+
+  <script>
+   
+    const projects = [
+      {
+        titulo: 'Projeto 1',
+        descricao: 'Descrição curta do projeto 1. Tecnologias: HTML, CSS, JS.',
+        imagem: 'https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&q=60&auto=format&fit=crop',
+        link: '#'
+      },
+    ];
+
+    
+    const grid = document.getElementById('projects-grid');
+    function renderProjects(list){
+      grid.innerHTML = '';
+      if(!list.length){grid.innerHTML = '<p style="color:var(--muted)">Nenhum projeto para exibir.</p>';return}
+      list.forEach(p => {
+        const el = document.createElement('article');
+        el.className = 'project';
+        el.innerHTML = `
+          <img src="${p.imagem}" alt="${p.titulo}" />
+          <div class="meta">
+            <h4>${p.titulo}</h4>
+            <p>${p.descricao}</p>
+            <a href="${p.link}" target="_blank" rel="noopener">Ver projeto →</a>
+          </div>
+        `;
+        grid.appendChild(el);
+      })
+    }
+    renderProjects(projects);
+
+    
+    const hambtn = document.getElementById('hambtn');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hambtn.addEventListener('click', ()=>{
+      const open = hamburger.classList.toggle('open');
+      hambtn.setAttribute('aria-expanded', open);
+      mobileMenu.style.display = open ? 'flex' : 'none';
+    });
+    
+    document.querySelectorAll('#mobile-menu [data-close]').forEach(a => a.addEventListener('click', ()=>{
+      hamburger.classList.remove('open');
+      hambtn.setAttribute('aria-expanded', false);
+      mobileMenu.style.display = 'none';
+    }))
+
+    
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e){
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    })
+
+  
+    const form = document.getElementById('contact-form');
+    const feedback = document.getElementById('form-feedback');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      let valid = true;
+      
+      document.getElementById('error-name').textContent='';
+      document.getElementById('error-email').textContent='';
+      document.getElementById('error-message').textContent='';
+      feedback.innerHTML='';
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if(!name){document.getElementById('error-name').textContent='Por favor, informe seu nome.'; valid=false}
+      if(!email){document.getElementById('error-email').textContent='Por favor, informe seu e-mail.'; valid=false}
+      else if(!/^\S+@\S+\.\S+$/.test(email)){document.getElementById('error-email').textContent='E-mail inválido.'; valid=false}
+      if(!message){document.getElementById('error-message').textContent='Por favor, escreva uma mensagem.'; valid=false}
+
+      if(!valid) return;
+
+      
+      feedback.innerHTML = '<div class="success">Mensagem enviada com sucesso! Obrigado — isto é uma simulação.</div>';
+      form.reset();
+
+      setTimeout(()=>{ feedback.innerHTML = ''; }, 4200);
+    })
+
+  
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 400){ toTop.style.display = 'block' } else { toTop.style.display = 'none' }
+    })
+    toTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}))
+
+    
+    document.getElementById('download-cv').addEventListener('click', ()=>{
+      
+      alert('download');
+    })
+
+    
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show') })
+    },{threshold:0.12})
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    
+    window.addEventListener('keydown',(e)=>{ if(e.key === 'Escape'){ hamburger.classList.remove('open'); mobileMenu.style.display='none'; hambtn.setAttribute('aria-expanded', false)} })
+
+    
+    window.updateProjects = function(newArray){ renderProjects(newArray); }
+  </script>
+</body>
+</html>
