@@ -13,10 +13,9 @@ Cada diretório representa uma atividade prática com código para aprendizado e
 | `D2-conceito-notas` | Filtra as notas maiores ou iguais a 7 e converte em conceitos: **BOM** e **EXCELENTE**. |
 | `D3-Nomes-em-maiúsculas-e-filtragem-de-idade` | Filtra pessoas com 18 anos ou mais e retorna os nomes em letras maiúsculas. |
 | `D4-login-simplificado` | Exercício prático sistema de login simples. |
-| `D5-estruturas-repeticao` | Prática de loops (for, while) para automação de tarefas simples. |
-| `D6-funcoes-javascript` | Criação e invocação de funções para modularização do código. |
-| `D7-manipulacao-de-arrays` | Uso de métodos como map, filter e reduce para gerir listas de dados. |
-| `D8-objetos-e-json` | Estruturação de dados complexos utilizando objetos e formato JSON. |
+| `D6-tarifas` | Um programa que exibe o valor de uma tarifa dependendo da idade e tipo do usuário. |
+| `D7-cafe` | Criação de programa para pedidos de café (com reduce). |
+| `D8-notas` | Converter notas usando: filter, map, ternário e Math.round. |
 
 *(Novas atividades serão adicionadas conforme o progresso.)*
 
