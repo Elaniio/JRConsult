@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício: Lista de Compras</title>
+</head>
+<body>
+    <h1>Exercício de Lógica: Lista de Compras</h1>
+    <p>Abra o console (F12) ou aguarde os alertas do sistema.</p>
+    
+    <script src="script.js"></script>
+</body>
+</html>
