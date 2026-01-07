@@ -1,4 +1,4 @@
-# 💻 JRConsult
+#  JRConsult
 
 Repositório criado para armazenar e organizar **atividades e exercícios em JavaScript**.  
 Cada diretório representa uma atividade prática com código para aprendizado e prática de lógica de programação.
